@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDA</title>
+    <link rel="icon" href="/img/logocda.png">  <!--aqui estamos insertando el icono de  la pestaña  de navegacion-->
+    <link rel="stylesheet" href="/css/style.css"> <!--aqui añadimos la hoja de estilos css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/index.html">Gestion de Proyectos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/Etapa0.html">Etapa 0</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/Etapa1.html">Etapa 1 </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Etapa2.html">Etapa 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Etapa3.html">Etapa 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Etapa4.html">Etapa 4</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Gestión del Alcance</h1>
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'Formulario')">Formulario y Cálculos</button>
+        </div>
+
+        <div id="Formulario" class="tabcontent">
+            <form id="project-form">
+                <div class="form-group">
+                    <label for="tarea">TAREA NO.</label>
+                    <input type="text" id="tarea" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">DESCRIPCIÓN</label>
+                    <textarea id="descripcion" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="fecha-inicio">FECHA DE INICIO DEL PROYECTO</label>
+                    <input type="date" id="fecha-inicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha-lanzamiento">FECHA DE LANZAMIENTO / PUESTA EN MARCHA</label>
+                    <input type="date" id="fecha-lanzamiento" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha-finalizacion">FECHA DE FINALIZACIÓN DEL PROYECTO</label>
+                    <input type="date" id="fecha-finalizacion" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechas-limites">ENUMERE CUALQUIER FECHA LÍMITE (S) ESTRICTA (S)</label>
+                    <textarea id="fechas-limites" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="hitos">ENUMERE OTRAS FECHAS / DESCRIPCIONES DE HITOS CLAVE</label>
+                    <textarea id="hitos" rows="2" required></textarea>
+                </div>
+                <button type="submit">Agregar Tarea</button>
+            </form>
+            <h2>Lista de Tareas</h2>
+            <table id="task-table">
+                <thead>
+                    <tr>
+                        <th>TAREA NO.</th>
+                        <th>DESCRIPCIÓN</th>
+                        <th>FECHA INICIO</th>
+                        <th>FECHA LANZAMIENTO</th>
+                        <th>FECHA FINALIZACIÓN</th>
+                        <th>FECHAS LÍMITES</th>
+                        <th>HITOS CLAVE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <h2>Total Tareas</h2>
+            <p id="total-tasks">0</p>
+            <button onclick="generatePDF()">Generar PDF</button>
+        </div>
+    </div>
+    <script src="/js/script5.js"></script>
+</body>
+</html>
